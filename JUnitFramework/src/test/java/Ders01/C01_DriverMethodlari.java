@@ -37,7 +37,7 @@ public class C01_DriverMethodlari {
             System.out.println("TEST FAILED");
         }
 
-        // sayfanin window handle kodunu yazdınırınız
+        // sayfanin window handle kodunu yazdinirınız
 
         System.out.println("Window Handle : " + driver.getWindowHandle());
 
