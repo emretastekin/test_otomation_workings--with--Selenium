@@ -1,62 +1,47 @@
 package Ders02;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C02_BeforeAfter {
-
-    WebDriver driver;
-    @Before
-    public void setUp() {
+public class C03_BeforeClassAfterClass {
+    static WebDriver driver;
+    @BeforeClass
+    public static void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
+
+    @AfterClass
+    public static void tearDown() {
+        driver.quit();
+    }
+
+
     @Test
-    public void Test() {
+    public void test() {
         // Amazon sayfasına gidiniz
         driver.get("https://www.amazon.com.tr");
     }
 
     @Test
-    public void Test1() {
+    public void test1() {
         // facebook sayfasına gidiniz
-        driver.get("https://www.facebook.com.tr");
+        driver.get("https://www.facebook.com");
     }
 
 
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
+
+
+
+
+
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
